@@ -1,0 +1,80 @@
+@import '../../styles/vars.scss';
+
+.image-gallery-icon {
+    display: none;
+}
+
+.custom-gallery {
+    align-self: flex-start;
+
+    .image-gallery-image {
+        width: 762px;
+        height: 508px;
+        object-fit: cover;
+
+        @media (min-width: 1800px) {
+            width: 862px;
+            height: 608px;
+        }
+
+        @media (max-width:1460px) {
+            width: 962px;
+            height: 708px;
+        }
+
+        @media (max-width:$laptopWidth) {
+            width: 762px;
+            height: 508px;
+        }
+
+        @media (max-width:$tabletWidth) {
+            width: 562px;
+            height: 408px;
+        }
+
+        @media (max-width:630px) {
+            width: 362px;
+            height: 308px;
+        }
+
+        @media (max-width: 420px) {
+            width: 340px;
+        }
+    }
+}
+
+.image-gallery-index {
+    z-index: 0;
+}
+
+.image-gallery-thumbnails-container {
+    display: flex;
+    width: 662px;
+    justify-content: space-between;
+
+    @media (max-width:$tabletWidth) {
+        width: 562px;
+    }
+
+    @media (max-width:630px) {
+        width: 362px;
+    }
+
+    @media (max-width: 420px) {
+        width: 340px;
+    }
+}
+
+.image-gallery-thumbnail {
+    width: 300px;
+}
+
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+    height: 131px;
+    width: 181px;
+
+    @media (min-width: 1800px) {
+        height: 141px;
+        width: 207px;
+    }
+}

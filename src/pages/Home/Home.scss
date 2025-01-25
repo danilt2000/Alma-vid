@@ -1,0 +1,256 @@
+@import '../../styles/vars.scss';
+
+.info ul {
+    padding: 0;
+}
+
+.info ul li {
+    line-height: 29px;
+
+    @media (min-width: 1800px) {
+        font-size: 20px;
+        line-height: 39px;
+    }
+}
+
+.info__lead p span {
+    display: block;
+    text-align: end;
+}
+
+.wrapper {
+    background-image: url(../../assets/images/background/Ud_EgKxddHk.jpg);
+    background-size: cover;
+    height: 75vh;
+}
+
+.info {
+    display: flex;
+    column-gap: 184px;
+    padding: 72px;
+    background: linear-gradient(270deg, #17628C 0%, #FFFFFF 100%);
+}
+
+.info__title {
+    font-size: 30px;
+
+    @media (min-width: 1800px) {
+        font-size: 34px;
+    }
+}
+
+.info__separator {
+    margin: 35px 0;
+    border-left: 4.5px solid rgba(255, 255, 255, 0.57);
+    border-radius: 10px;
+}
+
+.info__lead p {
+    min-width: 280px;
+    margin: 80px 0;
+    text-align: end;
+    font-size: 25px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: white;
+
+    @media (min-width: 1800px) {
+        min-width: 325px;
+        font-size: 29px;
+    }
+}
+
+.lawyer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 65px;
+    margin: 82px 263px;
+}
+
+.lawyer-info__container {
+    display: flex;
+    align-items: center;
+    column-gap: 104px;
+}
+
+.lawyer-info__title {
+    font-size: 34px;
+
+    @media (min-width: 1800px) {
+        font-size: 38px;
+    }
+}
+
+.lawyer-info__text {
+    font-size: 27px;
+
+    @media (min-width: 1800px) {
+        font-size: 31px;
+    }
+}
+
+.lawyer-info__image {
+    height: 349px;
+    width: 349px;
+    background-size: cover;
+
+    @media (min-width: 1800px) {
+        height: 379px;
+        width: 379px;
+    }
+}
+
+.lawyer-info__para {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 0;
+
+    @media (min-width: 1800px) {
+        font-size: 28px;
+    }
+}
+
+.map-container {
+    padding: 0 146px 80px 146px;
+
+    @media (max-width: $laptopWidth) {
+        padding: 0px 50px 80px 50px;
+    }
+
+    @media (max-width: $tabletWidth) {
+        padding: 0px 35px 50px 35px;
+    }
+
+    @media (max-width: $mobileWidth) {
+        padding: 0px 18px 40px 18px;
+    }
+}
+
+.map {
+    width: 100%;
+    height: 100vh;
+
+    @media (max-width: $laptopWidth) {
+        height: 50vh;
+    }
+}
+
+@media (max-width:$desktopWidth) {
+
+    .info__lead {
+        align-self: center;
+    }
+
+}
+
+@media (max-width:1120px) {
+    .info {
+        column-gap: 154px;
+    }
+
+}
+
+@media (max-width:$laptopWidth) {
+    .info {
+        padding: 36px;
+        column-gap: 92px;
+    }
+
+    .lawyer-info {
+        margin: 41px 131px;
+        row-gap: 32px;
+    }
+
+    .lawyer-info__text {
+        font-size: 25px;
+    }
+
+    .lawyer-info__title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width:$tabletWidth) {
+
+    .lawyer-info__para {
+        display: none;
+    }
+
+    .info__separator,
+    .info__lead {
+        display: none;
+    }
+
+    .info {
+        background: linear-gradient(270deg, #abc3d1 0%, #FFFFFF 100%);
+    }
+
+    .info__title {
+        font-size: 26px;
+        margin-top: 15px;
+    }
+
+    .lawyer-info__container {
+        flex-direction: column;
+    }
+
+    .lawyer-info__title {
+        margin-bottom: 0;
+    }
+
+    .lawyer-info__title,
+    .lawyer-info__text {
+        text-align: center;
+    }
+
+    .lawyer-info__text {
+        margin-top: 12.5px;
+        margin-bottom: 0;
+    }
+
+    .lawyer-info__paraMobile {
+        width: 100%;
+        margin: 0;
+        padding: 40px;
+        font-size: 25px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #17628C;
+        color: white;
+    }
+}
+
+@media (max-width:640px) {
+
+    .lawyer-info__paraMobile {
+        width: 125%;
+    }
+}
+
+@media (max-width:$mobileWidth) {
+
+    .info__title {
+        font-size: 24px;
+    }
+
+    .lawyer-info__title {
+        font-size: 30px;
+    }
+
+    .lawyer-info__text {
+        font-size: 21px;
+    }
+
+    .lawyer-info__paraMobile {
+        width: 200%;
+        font-size: 21px;
+    }
+}
+
+@media (min-width:769px) {
+
+    .lawyer-info__paraMobile {
+        display: none;
+    }
+}

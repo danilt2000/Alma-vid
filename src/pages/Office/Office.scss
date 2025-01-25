@@ -1,0 +1,329 @@
+@import '../../styles/vars.scss';
+
+.wrapper-office {
+    background-image: url(../../assets/images/background/n_cLeECP0mU.jpg);
+    background-size: cover;
+    height: 110vh;
+
+    @media (max-width: $laptopWidth) {
+        height: auto;
+    }
+
+    @media (max-width: $tabletWidth) {
+        background-position: top;
+        background-size: auto;
+    }
+}
+
+.office {
+    display: flex;
+    margin-top: 30px;
+
+    @media (min-width: 1800px) {
+        margin-top: 40px;
+    }
+
+    @media (max-width: $laptopWidth) {
+        padding-bottom: 70px;
+    }
+
+    @media (max-width: $tabletWidth) {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+}
+
+.office__title {
+    text-align: center;
+    padding: 120px 18px;
+    margin: 0 0 100px 0;
+    font-size: 70px;
+    color: white;
+
+    @media (min-width: 1800px) {
+        font-size: 74px;
+    }
+
+    @media (max-width: 668px) {
+        font-size: 55px;
+    }
+
+    @media (max-width: 420px) {
+        font-size: 51px;
+    }
+
+    @media (min-width: 769px) {
+        display: none;
+    }
+}
+
+.office__title span {
+    display: block;
+    font-size: 32px;
+
+    @media (min-width: 1800px) {
+        font-size: 36px;
+    }
+
+    @media (max-width: 668px) {
+        font-size: 25px;
+    }
+
+    @media (max-width: 420px) {
+        font-size: 23px;
+    }
+}
+
+.office__separator {
+    margin: -40px 27px -40px 55px;
+    border-radius: 10px;
+    border: 3px solid rgba(255, 255, 255, 1);
+
+    @media (max-width: $tabletWidth) {
+        display: none;
+    }
+}
+
+.office-inner {
+    @media (max-width: $tabletWidth) {
+        background: white;
+    }
+}
+
+.office-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 51px;
+
+    @media (min-width: 1800px) {
+        row-gap: 61px;
+    }
+
+    @media (max-width: $tabletWidth) {
+        align-items: center;
+        // width: auto;
+        margin: 50px;
+        padding: 50px;
+        border-radius: 30px;
+        background: #819099;
+    }
+
+    @media (max-width: 574px) {
+        align-items: normal;
+        margin: 35px;
+        padding: 35px;
+    }
+
+    @media (max-width: $mobileWidth) {
+        margin: 25px;
+        padding: 25px;
+    }
+
+    @media (max-width: 420px) {
+        padding: 20px;
+    }
+}
+
+.office__item {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+
+    @media (max-width: $tabletWidth) {
+        width: 400px;
+    }
+
+    @media (max-width: 574px) {
+        width: auto;
+    }
+}
+
+.office__pic {
+    background-size: cover;
+}
+
+.office__pic_purchase {
+    background-image: url(../../assets/images/icons/house.svg);
+    width: 47px;
+    height: 46px;
+
+    @media (min-width: 1800px) {
+        width: 65px;
+        height: 67px;
+    }
+}
+
+.office__pic_rent {
+    background-image: url(../../assets/images/icons/Group-56.svg);
+    width: 39px;
+    height: 38px;
+
+    @media (min-width: 1800px) {
+        width: 65px;
+        height: 64px;
+    }
+}
+
+.office__pic_buildings {
+    background-image: url(../../assets/images/icons/new-buildings.svg);
+    width: 40px;
+    height: 50px;
+
+    @media (min-width: 1800px) {
+        width: 60px;
+        height: 77px;
+    }
+}
+
+.office__pic_country {
+    background-image: url(../../assets/images/icons/country-estate.svg);
+    width: 51px;
+    height: 31px;
+
+    @media (min-width: 1800px) {
+        width: 87px;
+        height: 54px;
+    }
+}
+
+.office__pic_commercial {
+    background-image: url(../../assets/images/icons/commercial-real-estate.svg);
+    width: 44.5px;
+    height: 44px;
+
+    @media (min-width: 1800px) {
+        width: 75px;
+        height: 76px;
+    }
+}
+
+.office__desc {
+    margin: 0;
+    font-size: 25px;
+    color: white;
+
+    @media (min-width: 1800px) {
+        font-size: 29px;
+    }
+
+    @media (max-width: $laptopWidth) {
+        font-size: 22px;
+    }
+
+    @media (max-width: $mobileWidth) {
+        font-size: 20px;
+    }
+}
+
+.office__desc span {
+    display: block;
+}
+
+.office-location {
+    margin: 64px 146px 69px 146px;
+
+    @media (max-width: $tabletWidth) {
+        margin: 50px 50px 69px 50px;
+    }
+
+    @media (max-width: 574px) {
+        margin: 50px 35px 69px 35px;
+    }
+
+    @media (max-width: $mobileWidth) {
+        margin: 50px 25px 69px 25px;
+    }
+}
+
+.office-location__title {
+    text-align: center;
+    font-size: 35px;
+    color: #0F557D;
+
+    @media (min-width: 1800px) {
+        font-size: 39px;
+    }
+
+    @media (max-width: $tabletWidth) {
+        margin-top: 0;
+    }
+}
+
+.office-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    column-gap: 20px;
+
+    @media (max-width: $laptopWidth) {
+        flex-direction: column;
+    }
+}
+
+.office-info__para,
+.office-info__para_address {
+    font-size: 17.5px;
+    line-height: 29px;
+
+    @media (min-width: 1800px) {
+        font-size: 21.5px;
+        line-height: 33px;
+    }
+
+    @media (max-width: $laptopWidth) {
+        text-align: center;
+    }
+}
+
+.office-info__para_address {
+    @media (max-width: $laptopWidth) {
+        order: 1;
+    }
+}
+
+.office-info__para span,
+.office-info__para_address span {
+    display: block;
+    font-size: 25px;
+
+    @media (min-width: 1800px) {
+        font-size: 29px;
+    }
+}
+
+.office-info__para_address .office-info__desc {
+    display: block;
+    margin-top: 40px;
+    font-size: 17.5px;
+
+    @media (min-width: 1800px) {
+        font-size: 21.5px;
+    }
+
+    @media (max-width: $laptopWidth) {
+        font-size: 22.5px;
+    }
+}
+
+.office-info__para a {
+    color: black;
+}
+
+.office-info__para a:hover {
+    text-decoration: underline;
+}
+
+.map-office {
+    width: 100%;
+    height: 100vh;
+
+    @media (max-width: $laptopWidth) {
+        height: 50vh;
+    }
+}
+
+.map-office>YMaps {
+    border-radius: 25px;
+    overflow: hidden;
+}

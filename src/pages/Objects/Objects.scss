@@ -1,0 +1,23 @@
+@import '../../styles/vars.scss';
+
+.wrapper-objects {
+    background-image: url(../../assets/images/background/5sV_9sYRmHc.jpg);
+    background-size: cover;
+    height: 100vh;
+
+    @media (min-width: 799.98px) and (max-width: $laptopWidth) {
+        height: 100%;
+    }
+
+    @media (min-width: $tabletWidth) and (max-width: 800px) {
+        height: 73vh;
+    }
+
+    @media (max-width: $mobileWidth) {
+        height: 85vh;
+    }
+
+    @media (min-width: 380px) and (max-width: $mobileWidth) {
+        height: 73vh;
+    }
+}

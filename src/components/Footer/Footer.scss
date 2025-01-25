@@ -1,0 +1,126 @@
+@import '../../styles/vars.scss';
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    // column-gap: 96px;
+    justify-content: space-between;
+    padding: 70px 168px;
+    background: rgba(23, 98, 140, 1);
+    color: white;
+
+    @media (max-width: 1160px) {
+        display: grid;
+        justify-content: center;
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 46px;
+        padding: 60px 100px;
+    }
+
+    @media (max-width: $laptopWidth) {
+        padding: 45px 100px;
+        column-gap: 26px;
+    }
+
+    @media (max-width: $tabletWidth) {
+        padding: 45px 0px;
+    }
+
+    @media (max-width: 550px) {
+        padding: 30px 0px;
+    }
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer__logo {
+    font-size: 20px;
+
+    @media (min-width:1800px) {
+        font-size: 24px;
+    }
+}
+
+.footer__logo:hover {
+    text-decoration: none !important;
+}
+
+.footer-info {
+    display: flex;
+    column-gap: 46px;
+    font-size: 17px;
+    line-height: 29px;
+
+    @media (min-width:1800px) {
+        font-size: 21px;
+    }
+
+    @media (max-width: 1160px) {
+        grid-row: 2;
+    }
+
+    @media (max-width: 1024px) {
+        column-gap: 26px;
+    }
+
+    @media (max-width: 550px) {
+        font-size: 15px;
+        column-gap: 16px;
+    }
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1160px) {
+        grid-row: 2;
+    }
+
+    @media (max-width: 550px) {
+        grid-row: 3;
+    }
+}
+
+.footer-socials__tg {
+    background-image: url(../../assets/images/icons/telegram.svg);
+    width: 22.5px;
+    height: 19px;
+    background-size: cover;
+
+    @media (min-width:1800px) {
+        width: 28.5px;
+        height: 24px;
+    }
+}
+
+.footer-socials__inst {
+    background-image: url(../../assets/images/icons/inst.svg);
+    width: 42px;
+    height: 24px;
+    background-size: cover;
+
+    @media (min-width:1800px) {
+        width: 47px;
+        height: 27px;
+    }
+}
+
+.footer-socials__vk {
+    background-image: url(../../assets/images/icons/vk.svg);
+    width: 32.5px;
+    height: 34px;
+    background-size: cover;
+
+    @media (min-width:1800px) {
+        width: 35.5px;
+        height: 37px;
+    }
+}

@@ -1,0 +1,461 @@
+@import '../../styles/vars.scss';
+
+.apartament {
+    padding: 60px 52px 18px;
+
+    @media (max-width:1460px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media (max-width:$mobileWidth) {
+        padding: 30px 52px 18px;
+    }
+}
+
+.apartament__container {
+    display: flex;
+    column-gap: 42px;
+
+    @media (max-width:1460px) {
+        flex-direction: column;
+    }
+
+    @media (max-width:630px) {
+        align-items: center;
+    }
+}
+
+.apartament__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.apartament__title {
+    font-size: 50px;
+    margin: 0;
+
+    @media (min-width: 1800px) {
+        font-size: 55px;
+    }
+
+    @media (max-width:630px) {
+        font-size: 35px;
+    }
+
+    @media (max-width:460px) {
+        font-size: 31px;
+    }
+}
+
+.apartament__para {
+    font-size: 25px;
+    margin-top: 0;
+
+    @media (min-width: 1800px) {
+        font-size: 31px;
+    }
+
+    @media (max-width:630px) {
+        font-size: 20px;
+    }
+
+    @media (max-width:460px) {
+        font-size: 14px;
+    }
+}
+
+.apartament__icons {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 52px;
+    width: 762px;
+    margin-top: 20px;
+
+    @media (min-width: 1800px) {
+        width: 862px;
+    }
+
+    @media (max-width:1460px) {
+        width: 962px;
+    }
+
+    @media (max-width:$laptopWidth) {
+        width: 762px;
+    }
+
+    @media (max-width:$tabletWidth) {
+        width: 562px;
+    }
+
+    @media (max-width:630px) {
+        width: 362px;
+        flex-wrap: wrap-reverse;
+    }
+
+    @media (max-width: 420px) {
+        width: 340px;
+    }
+}
+
+.icons__item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    @media (min-width: 1800px) {
+        font-size: 22px;
+    }
+}
+
+.icons__pic {
+    background-size: cover;
+}
+
+.icons__pic_area {
+    background-image: url(../../assets/images/icons/total-area.svg);
+    width: 45px;
+    height: 44px;
+
+    @media (min-width: 1800px) {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+.icons__pic_living {
+    background-image: url(../../assets/images/icons/living-space.svg);
+    width: 47px;
+    height: 46px;
+
+    @media (min-width: 1800px) {
+        width: 67px;
+        height: 66px;
+    }
+}
+
+.icons__pic_kitchen {
+    background-image: url(../../assets/images/icons/kitchen-area.svg);
+    width: 58px;
+    height: 46px;
+
+    @media (min-width: 1800px) {
+        width: 78px;
+        height: 62px;
+    }
+}
+
+.icons__pic_year {
+    background-image: url(../../assets/images/icons/year-of-construction.svg);
+    width: 65px;
+    height: 47px;
+
+    @media (min-width: 1800px) {
+        width: 85px;
+        height: 62px;
+    }
+}
+
+.icons__pic__floor {
+    background-image: url(../../assets/images/icons/floor.svg);
+    width: 42px;
+    height: 44px;
+
+    @media (min-width: 1800px) {
+        width: 62px;
+        height: 64px;
+    }
+}
+
+.apartament__text {
+    width: 762px;
+
+    @media (min-width: 1800px) {
+        width: 862px;
+    }
+
+    @media (max-width:1460px) {
+        width: 962px;
+    }
+
+    @media (max-width:$laptopWidth) {
+        width: 762px;
+    }
+
+    @media (max-width:$tabletWidth) {
+        width: 562px;
+    }
+
+    @media (max-width:630px) {
+        width: 362px;
+    }
+
+    @media (max-width: 420px) {
+        width: 340px;
+    }
+}
+
+.apartament__text p {
+    margin: 40px 0;
+    font-size: 18px;
+    line-height: 30px;
+
+    @media (min-width: 1800px) {
+        font-size: 24px;
+        line-height: 34px;
+    }
+}
+
+.apartament__desc {
+    display: flex;
+    column-gap: 89px;
+
+    @media (min-width: 1800px) {
+        width: 862px;
+    }
+
+    @media (max-width:$tabletWidth) {
+        width: 562px;
+    }
+
+    @media (max-width:630px) {
+        flex-direction: column;
+        width: 362px;
+    }
+
+    @media (max-width: 420px) {
+        width: 340px;
+    }
+}
+
+.flat__title,
+.home__title {
+    font-size: 25px;
+    margin: 15px 0;
+
+    @media (min-width: 1800px) {
+        font-size: 31px;
+    }
+}
+
+.title-color {
+    color: rgba(23, 98, 140, 1);
+
+}
+
+.apartament__desc ul {
+    padding-left: 30px;
+}
+
+.apartament__desc li {
+    font-size: 20px;
+    line-height: 33px;
+
+    @media (min-width: 1800px) {
+        font-size: 26px;
+        line-height: 43px;
+    }
+}
+
+// пока так, потом можем переделать
+.apartament__price {
+    position: sticky;
+    top: 20%;
+    width: 513px;
+    height: 411px;
+    padding: 30px;
+    background-color: #BAE6FF;
+
+    @media (min-width:1700px) {
+        width: 703px;
+        height: 511px;
+    }
+
+    @media (max-width:1460px) {
+        position: static;
+        width: 903px;
+        height: 511px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width:$laptopWidth) {
+        width: 708px;
+        height: 461px;
+    }
+
+    @media (max-width:$tabletWidth) {
+        width: 513px;
+        height: 411px;
+    }
+
+    @media (max-width:630px) {
+        width: 362px;
+        height: 345px;
+    }
+
+    @media (max-width: 420px) {
+        width: 340px;
+        padding: 5px;
+    }
+}
+
+.price__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price__logo {
+    background-image: url(../../assets/images/logo/blue-logo.svg);
+    width: 150px;
+    height: 35px;
+    background-size: contain;
+
+    @media (max-width: 872px) {
+        width: 148px;
+    }
+}
+
+.price__total {
+    font-size: 35px;
+    margin: 16px 0 16px 10px;
+
+    @media (min-width:1700px) {
+        font-size: 41px;
+    }
+
+    @media (max-width:1460px) {
+        font-size: 45px;
+    }
+
+    @media (max-width:$laptopWidth) {
+        font-size: 39px;
+    }
+
+    @media (max-width:$tabletWidth) {
+        font-size: 35px;
+    }
+
+    @media (max-width:630px) {
+        font-size: 29px;
+    }
+
+    @media (max-width: 420px) {
+        font-size: 22px;
+    }
+}
+
+.price__desc {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 13px 10px;
+    border-radius: 6px;
+    font-size: 19px;
+    margin: 0 0 30px 0;
+
+    @media (min-width:1700px) {
+        font-size: 25px;
+    }
+
+    @media (max-width:1460px) {
+        font-size: 30px;
+    }
+
+    @media (max-width:$laptopWidth) {
+        font-size: 24px;
+    }
+
+    @media (max-width:$tabletWidth) {
+        font-size: 19px;
+    }
+
+    @media (max-width:630px) {
+        font-size: 13px;
+    }
+}
+
+.price__meter,
+.price__conditions,
+.price__mortgage {
+    width: 100%;
+    font-size: 18px;
+
+    @media (min-width:1700px) {
+        font-size: 24px;
+    }
+
+    @media (max-width:1460px) {
+        font-size: 31px;
+    }
+
+    @media (max-width:$laptopWidth) {
+        font-size: 25px;
+    }
+
+    @media (max-width:$tabletWidth) {
+        font-size: 18px;
+    }
+
+    @media (max-width:630px) {
+        font-size: 12px;
+    }
+}
+
+.apartament__btn_number,
+.apartament__btn_write {
+    width: 100%;
+    padding: 13px 0;
+    margin: 5px 0;
+    border-radius: 6px;
+    border: none;
+    font-size: 19px;
+    cursor: pointer;
+
+    @media (min-width:1700px) {
+        font-size: 24px;
+    }
+}
+
+.apartament__btn_number {
+    background: rgba(23, 98, 140, 1);
+    color: white;
+}
+
+.apartament__btn_number:hover {
+    background: rgb(1, 79, 123);
+}
+
+.apartament__btn_write {
+    background: white;
+    color: rgba(23, 98, 140, 1);
+}
+
+.map-apartament {
+    width: 762px;
+    height: 60vh;
+
+    @media (min-width: 1800px) {
+        width: 862px;
+        margin: 40px 0;
+    }
+
+    @media (max-width:1460px) {
+        width: 962px;
+    }
+
+    @media (max-width:$laptopWidth) {
+        width: 762px;
+    }
+
+    @media (max-width:$tabletWidth) {
+        width: 562px;
+    }
+
+    @media (max-width:630px) {
+        width: 362px;
+    }
+
+    @media (max-width: 420px) {
+        width: 350px;
+    }
+}

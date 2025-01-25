@@ -1,0 +1,99 @@
+@import '../../styles/vars.scss';
+
+.wrapper-about {
+    background-image: url(../../assets/images/background/gOWo4SLsoic.jpg);
+    background-size: cover;
+
+    @media (max-width: $tabletWidth) {
+        background-size: auto;
+        background-position: top;
+    }
+}
+
+.about {
+    display: flex;
+    column-gap: 121px;
+    padding-left: 45px;
+    padding-bottom: 33px;
+    color: white;
+    // было 4px вместо 10px
+    text-shadow: 2px 2px 10px rgba(6, 26, 37, 1);
+
+    @media (max-width: $tabletWidth) {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 0;
+        text-shadow: 1px 1px 15px rgba(6, 26, 37, 1);
+    }
+}
+
+.about-inner {
+    width: 596px;
+
+    @media (min-width: 1800px) {
+        width: 746px;
+    }
+
+    @media (max-width: $tabletWidth) {
+        align-self: center;
+        width: auto;
+        background: linear-gradient(90deg, #17628C 0%, #FFFFFF 147.13%);
+    }
+}
+
+.about__info {
+    // width: 596px;
+    padding: 38px;
+    font-size: 17.5px;
+    line-height: 29px;
+    border-radius: 25px;
+    background: rgba(10, 42, 60, 0.5);
+
+    @media (min-width: 1800px) {
+        font-size: 21.5px;
+        line-height: 33px;
+    }
+
+    @media (max-width: $tabletWidth) {
+        // width: auto;
+        padding: 30px;
+        margin: 50px;
+        font-size: 19.5px;
+    }
+}
+
+.about__info p:nth-child(2),
+.about__info p:last-child {
+    margin: 37px 0;
+}
+
+.about__title {
+    margin-top: 147px;
+    font-size: 35px;
+
+    @media (min-width: 1800px) {
+        font-size: 39px;
+    }
+
+    @media (max-width: $laptopWidth) {
+        margin-top: 247px;
+    }
+
+    @media (max-width: $tabletWidth) {
+        padding: 120px 18px;
+        margin: 0 0 60px 0;
+    }
+}
+
+.about__title span {
+    display: block;
+    text-align: end;
+
+    @media (max-width: 1355px) {
+        text-align: start;
+    }
+
+    @media (max-width: $tabletWidth) {
+        text-align: center;
+    }
+}
