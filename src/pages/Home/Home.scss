@@ -120,6 +120,7 @@
 
 .map-container {
   padding: 0 146px 80px 146px;
+  position: relative;
 
   @media (max-width: $laptopWidth) {
     padding: 0px 50px 80px 50px;
@@ -143,29 +144,26 @@
   }
 }
 
-
 .hero-tagline {
   height: 100%;
   display: flex;
-  justify-content: flex-end; 
-  padding: 100px 60px 0; 
+  justify-content: flex-end;
+  padding: 100px 60px 0;
 
   p {
     color: #ffffff;
-    font-family: "Inter", sans-serif; 
+    font-family: "Inter", sans-serif;
     font-size: max(50px, 3.646vw);
-    font-weight: 500; 
+    font-weight: 500;
     line-height: 1.5;
     text-align: right;
 
     max-width: max(600px, min(1150px, 59.896vw));
 
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   }
 
-  
   @media (max-width: $tabletWidth) {
-  
     padding: 15px 30px 0;
     p {
       font-size: 18px;
@@ -174,19 +172,16 @@
   }
 
   @media (max-width: $mobileWidth) {
-   
-    order: 1; 
-    width: 100%; 
-    margin-top: 20px; 
+    order: 1;
+    width: 100%;
+    margin-top: 20px;
 
-  
     justify-content: center;
-    padding: 10px 15px 0; 
-    
+    padding: 10px 15px 0;
 
     p {
       font-size: 16px;
-      text-align: center; 
+      text-align: center;
       max-width: 100%;
     }
   }

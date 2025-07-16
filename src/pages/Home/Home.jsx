@@ -1,15 +1,34 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Home.scss";
-import { YMaps, Map } from "@pbe/react-yandex-maps";
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
 import { Header } from "../../components/Header/Header";
 import { Form } from "../../components/Form/Form";
 import lawyer from "../../assets/images/lawyer/Mask-group.svg";
+import { CONTACTS } from "../../config/contacts";
 
 function Home() {
+  const [isMapActive, setIsMapActive] = useState(false);
+
   useEffect(() => {
-    document.title = "Агентство недвижимости АЛМА-ВИД";
+    document.title = CONTACTS.companyName;
   }, []);
+
+  const handleActivateMap = () => {
+    setIsMapActive(true);
+    if (window.homeMap) {
+      window.homeMap.behaviors.enable("scrollZoom");
+      window.homeMap.behaviors.enable("drag");
+    }
+  };
+
+  const handleDeactivateMap = () => {
+    setIsMapActive(false);
+    if (window.homeMap) {
+      window.homeMap.behaviors.disable("scrollZoom");
+      window.homeMap.behaviors.disable("drag");
+    }
+  };
 
   return (
     <>
@@ -90,8 +109,118 @@ function Home() {
         <YMaps>
           <Map
             className="map"
-            defaultState={{ center: [55.16, 61.4], zoom: 12 }}
-          />
+            defaultState={{
+              center: CONTACTS.coordinates,
+              zoom: 12,
+            }}
+            options={{
+              scrollZoom: false,
+              drag: false,
+              suppressMapOpenBlock: true,
+            }}
+            instanceRef={(ref) => {
+              window.homeMap = ref;
+            }}
+          >
+            <Placemark
+              geometry={CONTACTS.coordinates}
+              properties={{
+                balloonContent: CONTACTS.getBalloonContent(),
+                hintContent: `Офис ${CONTACTS.companyNameShort}`,
+              }}
+              options={{
+                preset: "islands#redDotIcon",
+              }}
+            />
+          </Map>
+
+          {/* Блокирующий оверлей когда карта неактивна */}
+          {!isMapActive && (
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                zIndex: 999,
+                cursor: "pointer",
+              }}
+              onClick={handleActivateMap}
+            />
+          )}
+
+          {/* Кнопка управления картой в центре */}
+          <div
+            style={{
+              position: "absolute",
+              top: "85%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1000,
+            }}
+          >
+            {!isMapActive ? (
+              <button
+                onClick={handleActivateMap}
+                style={{
+                  background: "rgba(0, 123, 255, 0.9)",
+                  border: "none",
+                  borderRadius: "8px",
+                  padding: "15px 25px",
+                  fontSize: "16px",
+                  fontFamily: "Inter, Arial, sans-serif",
+                  cursor: "pointer",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                  color: "white",
+                  fontWeight: "bold",
+                  minWidth: "140px",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = "rgba(0, 123, 255, 1)";
+                  e.target.style.transform = "scale(1.05)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = "rgba(0, 123, 255, 0.9)";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                📍 Посмотреть карту
+              </button>
+            ) : (
+              <button
+                onClick={handleDeactivateMap}
+                style={{
+                  background: "rgba(220, 53, 69, 0.9)",
+                  border: "none",
+                  borderRadius: "6px",
+                  padding: "10px 20px",
+                  fontSize: "14px",
+                  fontFamily: "Inter, Arial, sans-serif",
+                  cursor: "pointer",
+                  boxShadow: "0 3px 8px rgba(0,0,0,0.3)",
+                  color: "white",
+                  fontWeight: "bold",
+                  minWidth: "120px",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = "rgba(220, 53, 69, 1)";
+                  e.target.style.transform = "scale(1.05)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = "rgba(220, 53, 69, 0.9)";
+                  e.target.style.transform = "scale(1)";
+                }}
+              >
+                ✕ Закрыть карту
+              </button>
+            )}
+          </div>
         </YMaps>
       </div>
       <Form scrolledThreshold={2750} />
