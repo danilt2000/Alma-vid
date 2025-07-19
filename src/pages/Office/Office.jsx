@@ -90,10 +90,8 @@ function Office() {
         <div className="office-info">
           <p className="office-info__para_address">
             <span>Адрес:</span>
-            {CONTACTS.address.office.full}
-            <span className="office-info__desc">
-              {CONTACTS.address.office.description}
-            </span>
+            {CONTACTS.address.main.full}
+            <span className="office-info__desc">Вход в офис со двора</span>
           </p>
           <p className="office-info__para">
             <span>Телефон:</span>
