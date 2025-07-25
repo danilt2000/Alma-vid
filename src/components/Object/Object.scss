@@ -191,6 +191,78 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+  transition: max-height 0.3s ease, opacity 0.2s ease;
+
+  &--collapsed {
+    max-height: 180px;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: linear-gradient(transparent, white);
+      pointer-events: none;
+    }
+
+    @media (min-width: 1800px) {
+      max-height: 200px;
+    }
+
+    @media (max-width: 1300px) {
+      max-height: 170px;
+    }
+
+    @media (max-width: 1200px) {
+      max-height: 160px;
+    }
+
+    @media (max-width: 1100px) {
+      max-height: 150px;
+    }
+
+    @media (max-width: $laptopWidth) {
+      max-height: 140px;
+    }
+
+    @media (max-width: $tabletWidth) {
+      max-height: 190px;
+    }
+
+    @media (max-width: 740px) {
+      max-height: 180px;
+    }
+
+    @media (max-width: 690px) {
+      max-height: 170px;
+    }
+
+    @media (max-width: 635px) {
+      max-height: 160px;
+    }
+
+    @media (max-width: 570px) {
+      max-height: 150px;
+    }
+
+    @media (max-width: $mobileWidth) {
+      max-height: 160px;
+    }
+
+    @media (max-width: 420px) {
+      max-height: 150px;
+    }
+  }
+}
+
+.item__expand-wrapper {
+  margin-top: auto;
+  padding-top: 5px;
 }
 
 .item__price {
@@ -239,12 +311,11 @@
 .item__expand-btn {
   background: none;
   border: none;
-  color: #007bff;
+  color: #007bff !important;
   font-size: 11px;
   font-weight: 500;
   cursor: pointer;
   padding: 4px 0;
-  margin-top: auto;
   margin-bottom: 5px;
   text-align: left;
   transition: color 0.2s ease;
@@ -256,12 +327,17 @@
   text-overflow: ellipsis;
 
   &:hover {
-    color: #0056b3;
+    color: #0056b3 !important;
     text-decoration: underline;
   }
 
   &:focus {
     outline: none;
+    color: #007bff !important;
+  }
+
+  &:visited {
+    color: #007bff !important;
   }
 
   @media (min-width: 1800px) {
