@@ -6,52 +6,29 @@ function Object(props) {
   const [needsExpansion, setNeedsExpansion] = useState(false);
   const contentRef = useRef(null);
 
-  const checkIfContentOverflows = () => {
-    if (contentRef.current) {
-      // Временно убираем класс collapsed для измерения полной высоты
-      const element = contentRef.current;
-      const hadCollapsedClass = element.classList.contains(
-        "item__content--collapsed"
-      );
-
-      if (hadCollapsedClass) {
-        element.classList.remove("item__content--collapsed");
-      }
-
-      // Измеряем полную высоту
-      const fullHeight = element.scrollHeight;
-
-      // Возвращаем класс обратно
-      if (hadCollapsedClass) {
-        element.classList.add("item__content--collapsed");
-      }
-
-      // Измеряем высоту в свернутом состоянии
-      const collapsedHeight = element.clientHeight;
-
-      // Проверяем, есть ли разница больше чем 20px (чтобы избежать ложных срабатываний)
-      const heightDifference = fullHeight - collapsedHeight;
-      setNeedsExpansion(heightDifference > 20);
-    }
-  };
-
   useEffect(() => {
-    // Задержка для правильного расчета после рендера
-    const timeoutId = setTimeout(() => {
-      checkIfContentOverflows();
-    }, 200);
+    const checkExpansion = () => {
+      if (!props.desc || !props.address || !contentRef.current) {
+        setNeedsExpansion(false);
+        return;
+      }
 
-    // Проверяем при изменении размера окна
+      const contentElement = contentRef.current;
+      const contentHeight = contentElement.scrollHeight;
+      const containerHeight = contentElement.clientHeight;
+      
+      const needsExp = contentHeight > containerHeight;
+      setNeedsExpansion(needsExp);
+    };
+
+    setTimeout(checkExpansion, 100);
+    
     const handleResize = () => {
-      setTimeout(checkIfContentOverflows, 100);
+      setTimeout(checkExpansion, 100);
     };
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      clearTimeout(timeoutId);
-      window.removeEventListener("resize", handleResize);
-    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [props.desc, props.address]);
 
   const toggleExpansion = () => {
@@ -78,11 +55,26 @@ function Object(props) {
         </div>
 
         {needsExpansion && (
-          <div className="item__expand-wrapper">
+          <div className="item__expand-wrapper" style={{ display: 'block', visibility: 'visible', opacity: 1 }}>
             <button
               className="item__expand-btn"
               onClick={toggleExpansion}
               type="button"
+              style={{ 
+                display: 'block', 
+                visibility: 'visible', 
+                opacity: 1,
+                color: '#007bff',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '2px 0',
+                margin: '2px 0',
+                fontSize: '11px',
+                fontWeight: '500',
+                textAlign: 'left',
+                width: '100%'
+              }}
             >
               {isExpanded ? "Скрыть" : "Показать больше"}
             </button>
