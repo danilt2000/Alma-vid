@@ -10,7 +10,6 @@ jobs:
   compose:
     name: Push Docker image to ghcr.io
     runs-on: ubuntu-latest
-    needs: build
     permissions:
       packages: write
       contents: read
