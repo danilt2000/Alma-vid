@@ -52,7 +52,7 @@ export const CONTACTS = {
 };
 
 export const API_CONFIG = {
-  baseURL: "https://almavid.ngr1.ru",
+  baseURL: "https://api.almavid.ru",
   endpoints: {
     feedback: "/api/feedback/send",
     rental: "/api/rental/send",
