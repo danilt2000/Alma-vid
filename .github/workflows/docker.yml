@@ -1,4 +1,4 @@
-﻿name: Docker CI/CD
+name: Docker CI/CD
 # Apache 2.0 by Dmitrii yawaflua Shimanskii
 on:
   push:
@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - 'README.md'
       - '*.md'
-
+jobs:
   compose:
     name: Push Docker image to ghcr.io
     runs-on: ubuntu-latest
