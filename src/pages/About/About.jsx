@@ -37,7 +37,7 @@ function About() {
             </div>
           </div>
           <div className="about__title font-inter-semibold">
-            Об {CONTACTS.companyName} <span>{CONTACTS.companyNameShort}</span>
+            Об {CONTACTS.companyName}
           </div>
         </section>
       </div>

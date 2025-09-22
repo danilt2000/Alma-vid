@@ -24,7 +24,7 @@ function Footer() {
         className="footer__logo font-inter-regular"
         onClick={() => handlePageChange("/")}
       >
-        OOO "ALMA-VID"
+        Ткаченко НН
       </Link>
       <div className="footer-info font-inter-bold">
         <Link to="/objects" onClick={() => handlePageChange("/objects")}>

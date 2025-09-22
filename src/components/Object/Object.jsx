@@ -6,6 +6,17 @@ function Object(props) {
   const [needsExpansion, setNeedsExpansion] = useState(false);
   const contentRef = useRef(null);
 
+  const handleCardClick = (e) => {
+    // Don't redirect if user clicked on the expand button
+    if (e.target.closest('.item__expand-btn')) {
+      return;
+    }
+    
+    if (props.cianUrl) {
+      window.open(props.cianUrl, '_blank');
+    }
+  };
+
   useEffect(() => {
     const checkExpansion = () => {
       if (!props.desc || !props.address || !contentRef.current) {
@@ -36,7 +47,11 @@ function Object(props) {
   };
 
   return (
-    <div className={`item ${isExpanded ? "item--expanded" : ""}`}>
+    <div 
+      className={`item ${isExpanded ? "item--expanded" : ""} ${props.cianUrl ? "item--clickable" : ""}`}
+      onClick={handleCardClick}
+      style={{ cursor: props.cianUrl ? 'pointer' : 'default' }}
+    >
       <img className="item__image" src={props.image} alt="квартира" />
       <div className="item__info font-inter-bold">
         <div

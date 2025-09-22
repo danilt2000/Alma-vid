@@ -86,18 +86,21 @@ const SliderComponent = () => {
             price="2 500 000 ₽"
             desc="2-комн. кв., 47 м², 1/2 этаж"
             address="Челябинская область, Челябинск, Лазурная улица, 14А, район Металлургический, микрорайон Северо-Западный"
+            cianUrl="https://cian.ru/sale/flat/310187199/"
           />
           <Object
             image={objectPicTwo}
             price="4 200 000 ₽"
             desc="3-комн. кв., 77 м², 4/4 этаж"
             address="Челябинская область, Челябинск, улица Ярослава Гашека, 20, район Ленинский, микрорайон Центральный"
+            cianUrl="https://cian.ru/"
           />
           <Object
             image={objectPicThree}
             price="4 900 000 ₽"
             desc="Квартира-студия, 27,6 м², 19/25 этаж"
             address="Свердловская область, Екатеринбург, улица Студенческая, 80, район Верх-Исетский, микрорайон Уралмаш"
+            cianUrl="https://cian.ru/"
           />
         </Slider>
       </div>
@@ -114,6 +117,7 @@ const SliderComponent = () => {
             price={object.price}
             desc={object.title}
             address={object.address}
+            cianUrl={object.cianUrl}
           />
         ))}
       </Slider>
