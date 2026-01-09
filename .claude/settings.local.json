@@ -4,7 +4,8 @@
       "Bash(dir /B \"C:\\\\AlmaVid\\\\alma-vid-master\\\\alma-vid-master\\\\public\")",
       "Bash(convert --version:*)",
       "Bash(npm install:*)",
-      "Bash(node create-og-image.js:*)"
+      "Bash(node create-og-image.js:*)",
+      "WebFetch(domain:almavid.ru)"
     ]
   }
 }
